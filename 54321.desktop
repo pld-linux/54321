@@ -1,10 +1,9 @@
 [Desktop Entry]
 Name=54321
-Comment=Five simple 3D games.
-Comment[pl]= Piêæ prostych gier 3D.
+Comment=Five simple 3D games
+Comment[pl]=PiÄ™Ä‡ prostych gier 3D
 Exec=/usr/X11R6/bin/54321
 Icon=
 Terminal=0
 Type=Application
-
 # vi: encoding=utf-8
