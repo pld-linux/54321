@@ -16,7 +16,6 @@ BuildRequires:	SDL_image-devel
 Requires:	SDL >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 54321 is five games in four-, three-, or two-dimensions for one
 player. 54321 takes five classic two-dimensional puzzle games and
@@ -32,12 +31,14 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 %patch0 -p1
 
 %build
-%{__make} -f GNUmakefile CXXFLAGS="%{rpmcflags} -I /usr/include/SDL -DNDEBUG=1" CC="%{__cc}" CXX="%{__cxx}"
+%{__make} -f GNUmakefile \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcflags} -I/usr/include/SDL -DNDEBUG=1"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT $RPM_BUILD_ROOT%{_desktopdir} \
-$RPM_BUILD_ROOT{%{_bindir},%{_datadir}/54321}
+install -d $RPM_BUILD_ROOT%{_desktopdir},%{_bindir},%{_datadir}/54321}
 
 cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321
 install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
@@ -51,12 +52,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 #%doc README
-%dir %{_datadir}/%{name}/
-%dir %{_datadir}/%{name}/data
+%attr(755,root,root) %{_bindir}/*
+%dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/bin
 %dir %{_datadir}/%{name}/bin/Linux
-
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}/data/*
 %attr(755,root,root) %{_datadir}/%{name}/bin/Linux/*
+%{_datadir}/%{name}/data
 %{_desktopdir}/*
