@@ -34,7 +34,7 @@ Gry bazuj± na klasycznych puzzlowatych schematach oprawionych w ³adn± grafikê.
 %patch0 -p1
 
 %build
-%{__make} -f GNUmakefile
+%{__make} -f GNUmakefile CXXFLAGS="%{rpmcflags} -DNDEBUG=1" CC="%{__cc}" CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,6 +54,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 #%doc *.gz
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/Release/
+%dir %{_datadir}/%{name}/Release/data
+%dir %{_datadir}/%{name}/Release/bin
+%dir %{_datadir}/%{name}/Release/bin/Linux
+
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}/Release/data/*
 %attr(755,root,root) %{_datadir}/%{name}/Release/bin/Linux/*
