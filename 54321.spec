@@ -44,14 +44,13 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
 mv $RPM_BUILD_ROOT%{_bindir}/54321-exec $RPM_BUILD_ROOT%{_bindir}/54321
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
-#gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc *.gz
+#%doc README
 %dir %{_datadir}/%{name}/
 %dir %{_datadir}/%{name}/data
 %dir %{_datadir}/%{name}/bin
