@@ -38,11 +38,15 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_bindir},%{_datadir}/54321}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_bindir},%{_datadir}/54321/bin/Linux,%{_libdir}/54321}
 
-cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321
-install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
-mv $RPM_BUILD_ROOT%{_bindir}/54321-exec $RPM_BUILD_ROOT%{_bindir}/54321
+cp -r Release/data $RPM_BUILD_ROOT%{_datadir}/54321
+# hack to preserve %{_datadir} arch-independent
+install Release/bin/Linux/54321 $RPM_BUILD_ROOT%{_libdir}/54321
+cat > $RPM_BUILD_ROOT%{_bindir}/54321 <<EOF
+#!/bin/sh
+cd /usr/share/54321/bin/Linux && exec %{_libdir}/54321/54321 \$*
+EOF
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
@@ -51,12 +55,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc README
+%doc README
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/bin
 %dir %{_datadir}/%{name}/bin/Linux
-%attr(755,root,root) %{_datadir}/%{name}/bin/Linux/*
 %{_datadir}/%{name}/data
 %{_desktopdir}/*
-%dir %{_datadir}/%{name}/*
