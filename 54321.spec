@@ -32,18 +32,18 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 %patch0 -p1
 
 %build
-%{__make} -f GNUmakefile CXXFLAGS="%{rpmcflags} -DNDEBUG=1" CC="%{__cc}" CXX="%{__cxx}"
+%{__make} -f GNUmakefile CXXFLAGS="%{rpmcflags} -I /usr/include/SDL -DNDEBUG=1" CC="%{__cc}" CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT $RPM_BUILD_ROOT%{_applnkdir}/Games \
+install -d $RPM_BUILD_ROOT $RPM_BUILD_ROOT%{_desktopdir} \
 $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/54321}
 
 cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321
 install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
 mv $RPM_BUILD_ROOT%{_bindir}/54321-exec $RPM_BUILD_ROOT%{_bindir}/54321
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,4 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}/data/*
 %attr(755,root,root) %{_datadir}/%{name}/bin/Linux/*
-%{_applnkdir}/Games/*
+%{_desktopdir}/*
