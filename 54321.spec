@@ -1,5 +1,5 @@
-Summary:	Preety puzzle games for one player.
-Summary(pl):	£adne uk³adanki dla jednego gracza.
+Summary:	Preety puzzle games for one player
+Summary(pl):	£adne uk³adanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
 Release:	1
