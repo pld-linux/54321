@@ -8,7 +8,6 @@ Group:		X11/Applications/Games
 Source0:	http://nklein.com/products/54321/1.0.2001.11.16/%{name}.tgz
 # Source0-md5:	20b2ad52ef45742c1a65911b225b6ddc
 Source1:	%{name}.desktop
-Source2:	%{name}-exec
 Patch0:		%{name}-sdl_include_dir_fix.patch
 URL:		http://www.nklein.com/products/54321/
 BuildRequires:	SDL-devel
