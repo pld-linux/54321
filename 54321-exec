@@ -1,2 +1,2 @@
 #!/bin/sh
-cd /usr/X11R6/share/54321/Release/bin/Linux && exec ./54321 $*    
+cd /usr/X11R6/share/54321/bin/Linux && exec ./54321 $*    
