@@ -39,9 +39,9 @@ Gry bazuj± na klasycznych puzzlowatych schematach oprawionych w ³adn± grafikê.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT $RPM_BUILD_ROOT%{_applnkdir}/Games \
-$RPM_BUILD_ROOT{%{_bindir},%{_datadir}/54321/Release}
+$RPM_BUILD_ROOT{%{_bindir},%{_datadir}/54321}
 
-cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321/Release
+cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321
 install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
 mv $RPM_BUILD_ROOT%{_bindir}/54321-exec $RPM_BUILD_ROOT%{_bindir}/54321
 
@@ -54,13 +54,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 #%doc *.gz
-%dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/Release/
-%dir %{_datadir}/%{name}/Release/data
-%dir %{_datadir}/%{name}/Release/bin
-%dir %{_datadir}/%{name}/Release/bin/Linux
+%dir %{_datadir}/%{name}/
+%dir %{_datadir}/%{name}/data
+%dir %{_datadir}/%{name}/bin
+%dir %{_datadir}/%{name}/bin/Linux
 
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}/Release/data/*
-%attr(755,root,root) %{_datadir}/%{name}/Release/bin/Linux/*
+%{_datadir}/%{name}/data/*
+%attr(755,root,root) %{_datadir}/%{name}/bin/Linux/*
 %{_applnkdir}/Games/*
