@@ -2,7 +2,7 @@ Summary:	Preety puzzle games for one player
 Summary(pl):	£adne uk³adanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://nklein.com/products/54321/1.0.2001.11.16/%{name}.tgz
