@@ -1,5 +1,5 @@
 Summary:	Preety puzzle games for one player.
-Summary(pl):	£adne puzzlowate gry dla jednego gracza.
+Summary(pl):	£adne uk³adanki dla jednego gracza.
 Name:		54321
 Version:	1.0.2001.11.16
 Release:	1
@@ -24,8 +24,8 @@ extends them into three and four dimensions.
 
 %description -l pl
 54321 to piêæ gier w czterech, trzech i dwóch wymiarach dla jednego
-gracza. Gry bazuj± na klasycznych puzzlowatych schematach oprawionych
-w ³adn± grafikê.
+gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
+³adn± grafikê.
 
 %prep
 %setup -q -n 54321
