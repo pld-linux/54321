@@ -2,7 +2,7 @@
 Name=54321
 Comment=Five simple 3D games
 Comment[pl]=Pięć prostych gier 3D
-Exec=/usr/X11R6/bin/54321
+Exec=/usr/bin/54321
 Icon=
 Terminal=false
 Type=Application

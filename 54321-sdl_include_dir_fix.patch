@@ -7,8 +7,8 @@ diff -urN 54321/archs/Linux/variables.GNU 54321-good/archs/Linux/variables.GNU
  
 -SDL := /usr/local
 -SDL_IMAGE := /usr/local
-+SDL := /usr/X11R6
-+SDL_IMAGE := /usr/X11R6
++SDL := /usr
++SDL_IMAGE := /usr
  
  CPPFLAGS += -I${SDL}/include/SDL -I${SDL_IMAGE}/include/SDL
  LDFLAGS += \
