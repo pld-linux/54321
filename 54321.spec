@@ -2,7 +2,7 @@ Summary:	Preety puzzle games for one player
 Summary(pl):	£adne uk³adanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://nklein.com/products/54321/1.0.2001.11.16/%{name}.tgz
@@ -38,7 +38,7 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_desktopdir},%{_bindir},%{_datadir}/54321}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_bindir},%{_datadir}/54321}
 
 cp -r Release/* $RPM_BUILD_ROOT%{_datadir}/54321
 install %{SOURCE2} $RPM_BUILD_ROOT%{_bindir}
@@ -59,3 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/%{name}/bin/Linux/*
 %{_datadir}/%{name}/data
 %{_desktopdir}/*
+%dir %{_datadir}/%{name}/*
