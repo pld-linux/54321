@@ -1,2 +1,0 @@
-#!/bin/sh
-cd /usr/share/54321/bin/Linux && exec ./54321 $*    
