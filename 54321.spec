@@ -5,12 +5,13 @@ Version:	1.0.2001.11.16
 Release:	3
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://nklein.com/products/54321/1.0.2001.11.16/%{name}.tgz
+Source0:	http://nklein.com/products/54321/%{version}/%{name}.tgz
 # Source0-md5:	20b2ad52ef45742c1a65911b225b6ddc
 Source1:	%{name}.desktop
 Patch0:		%{name}-sdl_include_dir_fix.patch
+Patch1:		%{name}-linking.patch
 URL:		http://www.nklein.com/products/54321/
-BuildRequires:	SDL-devel
+BuildRequires:	SDL-devel >= 1.2.11-2
 BuildRequires:	SDL_image-devel
 Requires:	SDL >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,12 +29,15 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 %prep
 %setup -q -n 54321
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -f GNUmakefile \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CXXFLAGS="%{rpmcflags} -I/usr/include/SDL -DNDEBUG=1"
+	LDFLAGS="%{rpmldflags}" \
+	CXXFLAGS="%{rpmcflags} -I/usr/include/SDL -DNDEBUG=1" \
+	STRIP="echo"
 
 %install
 rm -rf $RPM_BUILD_ROOT
