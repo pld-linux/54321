@@ -1,0 +1,24 @@
+diff -Nur 54321.orig/GNUmakefile 54321.linking/GNUmakefile
+--- 54321.orig/GNUmakefile	2001-11-15 20:19:15.000000000 +0000
++++ 54321.linking/GNUmakefile	2006-11-05 21:42:09.000000000 +0000
+@@ -162,7 +162,7 @@
+ 
+ $(TARGET):	$(OBJS)
+ 	-@$(MKDIR_CMD)
+-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 	$(STRIP) $@
+ 
+ ifdef HAS_NOWEB
+diff -Nur 54321.orig/archs/Linux/variables.GNU 54321.linking/archs/Linux/variables.GNU
+--- 54321.orig/archs/Linux/variables.GNU	2006-11-05 21:41:33.000000000 +0000
++++ 54321.linking/archs/Linux/variables.GNU	2006-11-05 21:41:45.000000000 +0000
+@@ -9,7 +9,7 @@
+ SDL_IMAGE := /usr
+ 
+ CPPFLAGS += -I${SDL}/include/SDL -I${SDL_IMAGE}/include/SDL
+-LDFLAGS += \
++LIBS += \
+ 	-L${SDL_IMAGE}/lib -Wl,-rpath -Wl,${SDL_IMAGE}/lib \
+ 	-L${SDL}/lib -Wl,-rpath -Wl,${SDL}/lib \
+ 	-lSDL_image -lSDL -lSDLmain -lpthread -lpng
