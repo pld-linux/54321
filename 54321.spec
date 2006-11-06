@@ -2,7 +2,7 @@ Summary:	Preety puzzle games for one player
 Summary(pl):	£adne uk³adanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://nklein.com/products/54321/%{version}/%{name}.tgz
@@ -10,8 +10,9 @@ Source0:	http://nklein.com/products/54321/%{version}/%{name}.tgz
 Source1:	%{name}.desktop
 Patch0:		%{name}-sdl_include_dir_fix.patch
 Patch1:		%{name}-linking.patch
+Patch2:		%{name}-SDL_main.patch
 URL:		http://www.nklein.com/products/54321/
-BuildRequires:	SDL-devel >= 1.2.11-2
+BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 Requires:	SDL >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,6 +31,7 @@ gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
 %setup -q -n 54321
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} -f GNUmakefile \
