@@ -1,0 +1,20 @@
+diff -Nur 54321.orig/code/main.cpp 54321.SDL_main/code/main.cpp
+--- 54321.orig/code/main.cpp	2001-11-16 04:14:04.000000000 +0000
++++ 54321.SDL_main/code/main.cpp	2006-11-06 00:30:27.000000000 +0000
+@@ -2,6 +2,7 @@
+     #include <stdlib.h>
+     #include <unistd.h>
+     #include <SDL.h>
++    #include <SDL_main.h>
+     #include <SDL_keysym.h>
+     #include "cube.h"
+     #include "font.h"
+@@ -29,7 +30,7 @@
+     #include "life.h"
+     #include "lifeController.h"
+         extern "C" int
+-        SDL_main( int argc, char** argv )
++        main( int argc, char** argv )
+         {
+                 unsigned int initFlags = 0;
+                 initFlags |= SDL_INIT_VIDEO;
