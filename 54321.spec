@@ -67,4 +67,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/bin
 %dir %{_datadir}/%{name}/bin/Linux
 %{_datadir}/%{name}/data
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
