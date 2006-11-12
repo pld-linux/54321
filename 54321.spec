@@ -12,7 +12,7 @@ Patch0:		%{name}-sdl_include_dir_fix.patch
 Patch1:		%{name}-linking.patch
 Patch2:		%{name}-SDL_main.patch
 URL:		http://www.nklein.com/products/54321/
-BuildRequires:	SDL-devel
+BuildRequires:	SDL-devel >= 1.2.4
 BuildRequires:	SDL_image-devel
 Requires:	SDL >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
