@@ -1,5 +1,5 @@
 Summary:	Preety puzzle games for one player
-Summary(pl):	£adne uk³adanki dla jednego gracza
+Summary(pl.UTF-8):   Åadne ukÅ‚adanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
 Release:	4
@@ -22,10 +22,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 player. 54321 takes five classic two-dimensional puzzle games and
 extends them into three and four dimensions.
 
-%description -l pl
-54321 to piêæ gier w czterech, trzech i dwóch wymiarach dla jednego
-gracza. Gry bazuj± na klasycznych schematach uk³adanek; oprawione s± w
-³adn± grafikê.
+%description -l pl.UTF-8
+54321 to piÄ™Ä‡ gier w czterech, trzech i dwÃ³ch wymiarach dla jednego
+gracza. Gry bazujÄ… na klasycznych schematach ukÅ‚adanek; oprawione sÄ… w
+Å‚adnÄ… grafikÄ™.
 
 %prep
 %setup -q -n 54321
