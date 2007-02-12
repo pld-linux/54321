@@ -1,5 +1,5 @@
 Summary:	Preety puzzle games for one player
-Summary(pl.UTF-8):   Ładne układanki dla jednego gracza
+Summary(pl.UTF-8):	Ładne układanki dla jednego gracza
 Name:		54321
 Version:	1.0.2001.11.16
 Release:	4
