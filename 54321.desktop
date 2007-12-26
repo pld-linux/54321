@@ -6,6 +6,5 @@ Exec=/usr/bin/54321
 Icon=
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Game;BoardGame;
 # vi: encoding=utf-8
